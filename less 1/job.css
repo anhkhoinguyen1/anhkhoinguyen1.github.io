@@ -1,0 +1,51 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
+#container {
+    font-family: Arial;
+    background-color: aqua;
+    width: 50%;
+    margin: 0;
+    padding: 50px 70px 50px 70px;
+    margin: auto;
+    line-height: 2;
+
+}
+
+#quoc-hieu {
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+#decoration {
+    text-align: center;
+    font-size: 15px;
+}
+
+.signature {
+    text-align: center;
+    text-decoration: bold;
+    font-weight: bold;
+    font-size: 20px;
+    margin-left: 80%;
+}
+
+#line {
+    padding-left: auto;
+    padding-right: auto;
+
+}
+
+blockquote {
+    border-left: 5px solid gray;
+    padding-left: 20px;
+}
+
+.red {
+    color: red;
+}
