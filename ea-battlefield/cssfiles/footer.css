@@ -66,36 +66,33 @@
     height: 100%;
     width: 100%;
 }
-#tag-name {
-    position:absolute;
-    top:0;
-    left:0;
-    color: white;
+#tag-name-ctr {
     background-color: #989898;
-    padding: 5px 10px 5px 10px;
+    padding: 7px 10px 7px 10px;
+    width: 190px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#tag-name {
+    color: white;
 }
 #full-name-pfp {
-    position:absolute;
-    top: 40px;
-    left: 0;
+    margin-top: 15px;
     color: black;
     text-transform: capitalize;
     font-family: lem;
-    font-size: 50px;
+    font-size: 47px;
 }
 #self-intro {
+    margin-top: 10px;
+    margin-bottom: 10px;
     line-height: 1.4;
-    position:absolute;
-    top: 110px;
-    left: 0;
-    color: #b2b2b2;
+    color: #aaaaaa;
     font-family: tom;
     font-size: 18px;
 }
 #gen-info-ctr {
-    position: absolute;
-    left: 0;
-    top: 300px;
 }
 .cat-info {
     width: 110px;
@@ -103,7 +100,7 @@
 }
 .pfp-info {
     font-weight: lighter;
-    color: #b2b2b2;
+    color: #aaaaaa;
 }
 #table-label {
     font-size: 25px;
