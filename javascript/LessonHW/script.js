@@ -40,7 +40,7 @@ function convToHour(totalMin = 100) {
     return convHour;
 }
 
-let calcHour = convToHour(Math.round((Math.random() * (9999-1)) + 1));
+let calcHour = convToHour(Math.round((Math.random() * (500-1)) + 1));
 console.log(`${start1}min == ${calcHour}h`);
 
 // solve equation of ax + b = c
