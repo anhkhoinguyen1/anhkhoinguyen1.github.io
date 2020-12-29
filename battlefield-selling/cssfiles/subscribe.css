@@ -1,0 +1,346 @@
+
+/* Subscription Screen */
+
+#subscription-screen {
+    width: 100%;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#subscription-ctr {
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: center;
+}
+#sub-left-ctr {
+    height: 475px;
+    width: 545px;
+    margin-right: 20px;
+}
+#sufbn {
+    letter-spacing: 2px;
+    font-size: 50px;
+    font-family: Berka;
+    color: white;
+}
+#sufbnp {
+    margin-top: 30px;
+    line-height: 1.5;
+    letter-spacing: 1px;
+    font-size: 17px;
+    color: white;
+}
+#sub-right-ctr {
+    height: 410px;
+    width: 555px;
+    display: flex;
+    flex-direction: column;
+    /* background-color: salmon; */
+}
+#form-mail {
+    height: 100%;
+    width: 100%;
+    /* background-color: black; */
+}
+form {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+.placeholder {
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    left: 28px;
+    color: #505050;
+    font-size: 14px;
+    transition-duration: 0.2s;
+    z-index: 1;
+}
+.input-box-item {
+    height: 100%;
+    width: 100%;
+    border-radius: 3px;
+    background: transparent;
+    position: relative;
+    color: white;
+    border: 3px white solid;
+    padding: 20px;
+    padding-top: 22px;
+    padding-bottom: 18px;
+    padding-left: 30px;
+    width: 500px;
+    height: 26px;
+    outline: none;
+    transition-duration: 0.1s;
+    font-size: 17px;
+}
+input[type="text"] + textarea {
+    background-color: thistle;
+}
+.input-box-ctr {
+    background: transparent;
+    position: relative;
+    border-radius: 3px;
+    color: white;
+    transition-duration: 0.1s;
+}
+.input-box-item:hover , .input-box-item:focus {
+    transform: scale(1.02);
+    transition-duration: 0.1s;
+}
+.input-box-item:focus + .placeholder{
+    top: 14px;
+    font-size: 12px;
+    transition-duration: 0.1s;
+}
+.input-box-item:valid + .placeholder{
+    font-size: 12px;
+    top: 14px;
+    left: 30px;
+}
+.input-box-item:focus {
+    padding-top: 25px;
+    padding-bottom: 15px;
+    transition-duration: 0.1s;
+}
+.input-box-item:valid {
+    padding-top: 25px;
+    padding-bottom: 15px;
+    transition-duration: 0.1s;
+}
+#lower-form {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-content: center;
+}
+#date {
+    width: 200px;
+    background-color: black;
+    transition-duration: 0.1s;
+    text-transform: uppercase;
+    color: white;
+}
+#country {
+    width: 200px;
+}
+input[type="date"] {
+    z-index: -1;
+    color: white;
+}
+#birthdate-placeholder {
+    left: 32px;
+    cursor: context-menu;
+    transition-duration: 0.1s;
+}
+#invisible-input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 26px;
+    width: 200px;
+    border-radius: 3px;
+    background-color: black;
+    border: 3px white solid;
+    padding: 20px;
+    padding-top: 22px;
+    padding-bottom: 18px;
+    padding-left: 30px;
+    outline: none;
+    transition-duration: 0.1s;
+    font-size: 17px;
+    z-index: 1;
+}
+
+/* #birthdate-placeholder */
+#bd-ctr:hover #birthdate-placeholder{
+    z-index: 3;
+    top: 10px;
+
+}
+#bd-ctr:hover #invisible-input {
+    transform: scale(1.02);
+    transition-duration: 0.1s;
+    z-index: -1;
+}
+input[type="date"]:focus #invisible-input {
+    z-index: -1;
+}
+#bd-ctr:hover input[type="date"] {
+    z-index: 2;
+}
+#bd-ctr:focus input[type="date"] {
+    z-index: 2;
+}
+input[type="date"]:focus  {
+    z-index: 2;
+}
+input[type="date"]:focus  + #birthdate-placeholder {
+    top: 10px;
+    z-index: 3;
+}
+input[type="date"]:valid  {
+    z-index: 1;
+}
+input[type="date"]:valid #invisible-input{
+    z-index: -1;
+    visibility: hidden;
+}
+#bd-ctr {
+    border-radius: 3px;
+    position: relative;
+    height: 100%;
+    background-color: black;
+}
+
+::-webkit-datetime-edit-text { color: #ffffff; padding: 0 0.3em; }
+::-webkit-datetime-edit-month-field { color: #888888; }
+::-webkit-datetime-edit-day-field { color: #888888; }
+::-webkit-datetime-edit-year-field { color: #888888; }
+
+
+/* Country Selection */
+
+#country {
+    cursor: pointer;
+    border-radius: 3px;
+    position: relative;
+    height: 100%;
+    background-color: black;
+    width: 250px;
+    border: 3px white solid;
+    transition-duration: 0.1s;
+    text-transform: uppercase;
+    color: white;
+    outline: none;
+    padding: 20px;
+    padding-top: 21px;
+    padding-bottom: 0;
+    font-size: 20px;
+}
+#country:hover {
+    transform: scale(1.02);
+    transition-duration: 0.1s;
+}
+#country:hover + #ct-ph{
+    left: 23px;
+    top: 13px;
+}
+#ct-ph {
+    top: 14px;
+}
+
+
+/* Checkbox for news subscription */
+#check-box-ctr {
+    margin-top: 30px;
+    margin-bottom: 20px;
+    width: 100%;
+    height: 105px;
+}
+#checkbox-txt-ctr {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    background-color: red;
+}
+#news-subscribe-cb {
+    background-color: royalblue;
+}
+#checkbox-txt {
+    position: absolute;
+    right: 0;
+    font-weight: lighter;
+    font-size: 14px;
+    color: white;
+    width: 500px;
+    line-height: 1.5;
+}
+input[type="checkbox"] {
+    outline: none;
+    width: 50px;
+    background-color: teal;
+}
+#checkbox-txt-ctr input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: transparent;
+    border: 3px solid white;
+    border-radius: 3px;
+    overflow: hidden;
+    transition-duration: 0.1s;
+}
+#checkbox-txt-ctr:hover input ~ .checkmark {
+    transform: scale(1.06);
+    transition-duration: 0.1s;
+}
+#checkbox-txt-ctr input:checked ~ .checkmark {
+    background-color: transparent;
+}
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+#checkbox-txt-ctr input:checked ~ .checkmark:after {
+    display: block;
+}
+#checkbox-txt-ctr .checkmark:after {
+    left: 8px;
+    top: 3px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 4px 5px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+.link-to-sw {
+    text-decoration: none;
+    color: #f17f17;
+}
+.link-to-sw:hover {
+    text-decoration: underline;
+    color: orange;
+}
+#submit-btn-ctr {
+    width: 100%;
+}
+#signup-btn {
+    cursor: pointer;
+    padding: 20px 40px 20px 40px;
+    background-color: #f28728;
+    color: white;
+    outline: none;
+    transition-duration: 0.1s;
+    border-radius: 5px;
+    font-size: 17px;
+}
+#signup-btn:hover {
+    transform: scale(1.06);
+    transition-duration: 0.1s;
+}
+
+
+
