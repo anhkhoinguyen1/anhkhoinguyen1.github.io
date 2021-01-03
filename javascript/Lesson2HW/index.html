@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 2 HW</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./prism.css">
+
+</head>
+<body>
+    <div class="container">
+        <!-- 1 -->
+        <div class="box">
+            <h3>Bai 1</h3>
+            <pre class="language-javascript">
+                <code>
+    function checkAscending(array) {
+        let state;
+        for(let i = 1; i < array.length; i++) {
+            if(array[i-1] >= array[i]) {
+                state = false;
+                break
+            };
+            state = true;
+        };
+        if (state == true) {
+            console.log(`${array} is ascending`);
+        }   else {
+            console.log(`${array} is NOT ascending`);
+        }
+    };
+
+    let randomArray = [getRandom(1,5),getRandom(1,5),getRandom(5,10),getRandom(5,10)]
+
+    checkAscending(randomArray);              
+                </code>
+            </pre>
+        </div>
+        <!-- 2 -->
+        <div class="box">
+            <h3>Bai 2</h3>
+            <pre class="language-javascript">
+                <code>          
+    function checkDescending(array) {
+        let state;
+        for(let i = 1; i < array.length; i++) {
+            if(array[i-1] <= array[i]) {
+                state = false;
+                break
+            };
+            state = true;
+        };
+        
+        if (state == true) {
+            console.log(`${array} is descending`);
+        }   else {
+            console.log(`${array} is NOT descending`);
+        }
+    };
+    
+    randomArray = [getRandom(5,10),getRandom(5,10),getRandom(1,5),getRandom(1,5)];
+    checkDescending(randomArray);
+                </code>
+            </pre>
+        </div>
+        <!-- 3 -->
+        <div class="box">
+            <h3>Bai 3</h3>
+            <pre class="language-javascript">
+                <code>          
+    function checkAsEven(array) {
+        let state;
+        for(let i = 1; i < array.length; i++) {
+            if ((array[i-1] <= array[i]) && ((array[i-1] + array[i]) % 2 == 0)) {
+                state = true;
+            } else {
+                state = false;
+                break
+            }
+        };
+        if (state == true) {
+            console.log(`${array} is ascending even numbers`);
+        }   else {
+            console.log(`${array} is NOT ascending even numbers`);
+        }
+    };
+    
+    randomArray = [2,6,getRandom(10,12),getRandom(14,16)];
+    checkAsEven(randomArray);
+                </code>
+            </pre>
+        </div>
+        <!-- 4 -->
+        <div class="box">
+            <h3>Bai 4</h3>
+            <pre class="language-javascript">
+                <code>          
+    function checkDesOdd(array) {
+        let state;
+        for(let i = 1; i < array.length; i++) {
+            if((array[i-1] >= array[i] && (array[i-1] * array[i]) % 2 == 1)) {
+                state = true;
+            } else {
+                state = false;
+                break
+            }
+        };
+        if (state == true) {
+            console.log(`${array} is descending odd`);
+        }   else {
+            console.log(`${array} is NOT descending odd`);
+        }
+    };
+    
+    
+    randomArray = [15,11,getRandom(5,7),getRandom(1,3)];
+    checkDesOdd(randomArray);
+                </code>
+            </pre>
+        </div>
+        <!-- 5 -->
+        <div class="box">
+            <h3>Bai 5</h3>
+            <pre class="language-javascript">
+                <code>          
+    function findLargest(array) {
+        let state = array[0];
+        for(let i = 1; i < array.length; i++) {
+            if(state < array[i]) {
+                state = array[i];
+            }
+        };
+        console.log(`${array} : ${state} is the largest number`)
+    };
+    
+    
+    randomArray = [getRandom(1,50),getRandom(1,50),getRandom(1,50),getRandom(1,50),getRandom(1,50)];
+    findLargest(randomArray);
+                </code>
+            </pre>
+        </div>
+        <!-- 6 -->
+        <div class="box">
+            <h3>Bai 6</h3>
+            <pre class="language-javascript">
+                <code>          
+    function findSmallest(array) {
+        let state = array[0];
+        for(let i = 1; i < array.length; i++) {
+            if(state > array[i]) {
+                state = array[i];
+            }
+        };
+        console.log(`${array} : ${state} is the smallest number`)
+    };
+    
+    
+    randomArray = [getRandom(1,50),getRandom(1,50),getRandom(1,50),getRandom(1,50),getRandom(1,50)];
+    findSmallest(randomArray);
+                </code>
+            </pre>
+        </div>
+        <!-- 7 -->
+        <div class="box">
+            <h3>Bai 7</h3>
+            <pre class="language-javascript">
+                <code>          
+    function findRemainder(array) {
+        console.log(array)
+        for(let i = 1; i < array.length + 1; i++) {
+            array[i-1] = array[i-1] % 2;
+        };
+        console.log(array)
+    };
+    
+    
+    randomArray = [getRandom(1,10),getRandom(1,10),getRandom(1,10),getRandom(1,10)];
+    findRemainder(randomArray);
+                </code>
+            </pre>
+        </div>
+        <!-- 8 -->
+        <div class="box">
+            <h3>Bai 8</h3>
+            <pre class="language-javascript">
+                <code>          
+    function repeatCharacter(character) {
+        let newString = '';
+        for(let i = 1; i < 11; i++) {
+            newString += character;
+        };
+        console.log(newString);
+    };
+    
+    repeatCharacter(getRandomLetter());
+                </code>
+            </pre>
+        </div>
+        <!-- 9 -->
+        <div class="box">
+            <h3>Bai 9</h3>
+            <pre class="language-javascript">
+                <code>          
+    function repeatCharacterDash(character) {
+        let newString = character;
+        for(let i = 1; i < 10; i++) {
+            newString += '-' + character;
+        };
+        console.log(newString);
+    };
+    
+    repeatCharacterDash(getRandomLetter());
+                </code>
+            </pre>
+        </div>
+    </div>
+    <script src="./prism.js"></script>
+    <script src="./script.js"></script>
+</body>
+</html>
