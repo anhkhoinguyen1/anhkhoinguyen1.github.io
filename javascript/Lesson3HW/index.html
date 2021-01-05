@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 3 HW</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./prism.css">
+
+</head>
+<body>
+    <div class="container">
+        <!-- 1 -->
+        <div class="box">
+            <h3>Bai 1</h3>
+            <pre class="language-javascript">
+                <code>
+    function checkArrValue(value, arr) {
+        if (arr.indexOf(value) != -1) {
+            return true;
+        } else {
+            return false;
+        }  
+    };
+    
+    console.log(checkArrValue(10, [1,2,3,10,4,5]));
+                </code>
+            </pre>
+        </div>
+        <!-- 2 -->
+        <div class="box">
+            <h3>Bai 2</h3>
+            <pre class="language-javascript">
+                <code>          
+    function findSecMax(arr) {
+        let firMax = arr[0];
+        let secMax = arr[0];
+        for(let i = 0; i < arr.length; i++) {
+            if (firMax < arr[i]) {
+                firMax = arr[i]
+            }
+        }
+        for(let i = 0; i < arr.length; i++) {
+            if (arr[i] == firMax)
+            arr.splice(i, 1)
+        }
+        for(let i = 0; i < arr.length; i++) {
+            if (secMax < arr[i]) {
+                secMax = arr[i]
+            }
+        }
+        return secMax
+    }
+    
+    console.log(findSecMax([9,1,2,6,1,6,9,2,8]))
+                </code>
+            </pre>
+        </div>
+        <!-- 3 -->
+        <div class="box">
+            <h3>Bai 3</h3>
+            <pre class="language-javascript">
+                <code>          
+    function pickRanEle(numArr) {
+        return numArr[Math.floor(Math.random() * numArr.length)]
+    }
+    
+    console.log(pickRanEle([1,2,3,4,5,6,7,8,9,10]));
+                </code>
+            </pre>
+        </div>
+        <!-- 4 -->
+        <div class="box">
+            <h3>Bai 4</h3>
+            <pre class="language-javascript">
+                <code>          
+    function pickLongestStr(strArr) {
+        let longStr = strArr[0].length;
+        let newArr = [];
+        for(let i = 0; i < strArr.length; i++) {
+            if (longStr < strArr[i].length) {
+                longStr = strArr[i].length;
+            };
+        };
+        for(let i = 0; i < strArr.length; i++) {
+            if (strArr[i].length == longStr) {
+                newArr.push(strArr[i]);
+            };
+        };
+        return newArr;
+    };
+    
+    console.log(pickLongestStr(["a","ss","cc","ccc","ddd"]));
+                </code>
+            </pre>
+        </div>
+        <!-- 5 -->
+        <div class="box">
+            <h3>Bai 5</h3>
+            <pre class="language-javascript">
+                <code>          
+    function findSimilar(arr1, arr2) {
+        let newArr = [];
+        for(let i = 0; i < arr1.length; i++) {
+            for(let z = 0; z < arr2.length; z++) {
+                if(arr1[i] == arr2[z]) {
+                    newArr.push(arr2[z]);
+                };
+            };
+        };
+        return newArr.sort(function(a, b){return a - b});
+    };
+    
+    console.log(findSimilar([3,4,2,1], [1,2,4,6,8,9]));
+                </code>
+            </pre>
+        </div>
+        <!-- 6 -->
+        <div class="box">
+            <h3>Bai 6</h3>
+            <pre class="language-javascript">
+                <code>          
+    function removeDuplicate(arr) {
+        let newArr = [];
+        for(let i = 0; i < arr.length; i++) {
+            for(let z = 0; z < arr.length; z++) {
+                if(arr[i] == arr[z] && checkArrValue(arr[z], newArr) == false) {
+                    newArr.push(arr[z]);
+                };
+            };
+        };
+        return newArr.sort(function(a, b){return a - b});
+    };
+    
+    console.log(removeDuplicate([1,2,5,2,7,5,7,6,2,5]));
+                </code>
+            </pre>
+        </div>
+        <!-- 7 -->
+        <div class="box">
+            <h3>Bai 7</h3>
+            <pre class="language-javascript">
+                <code>          
+    function generateHex() {
+        let hexArr = '123456789ABCDEF'
+        let hexCode = '';
+        for(let i = 0; i < 6; i++) {
+            hexCode += hexArr.charAt(Math.floor(Math.random() * 15))
+        };
+        return hexCode
+    };
+    
+    console.log(`#${generateHex()}`);                    
+                </code>
+            </pre>
+        </div>
+        <!-- 8 -->
+        <div class="box">
+            <h3>Bai 8</h3>
+            <pre class="language-javascript">
+                <code>          
+    function generateRGB() {
+        let rgbCode = [];
+        for(let i = 0; i < 3; i++) {
+            rgbCode.push(Math.floor(Math.random() * 256))
+        };
+        return rgbCode.join(",")
+    };
+    
+    console.log(`rgb(${generateRGB()})`);                    
+                </code>
+            </pre>
+        </div>
+    </div>
+    <script src="./prism.js"></script>
+    <script src="./script.js"></script>
+</body>
+</html>
