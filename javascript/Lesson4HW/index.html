@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 4</title>
+    <link rel="stylesheet" href="./prism.css"> 
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="ctr">
+        <div class="box">
+            <h3>Bai 1</h3>
+            <p class="prompt">Find if a word is inside a string</p>
+            <pre class="code-input-ctr language-javascript">
+                <code class="code-input">
+    function checkWord(str, word) {
+        strArr = str.split(" ");
+        if (strArr.indexOf(word) != -1) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+    
+    function checkWord_1(str, word) {
+        if (str.search(word) == -1) {
+            return false;
+        } else {
+            return true;
+        }
+    }
+    
+    console.log(checkWord("i love you", "you"));
+    console.log(checkWord("i love you", "hate"));
+    
+    console.log(checkWord_1("i love you", "hate"));
+    console.log(checkWord_1("i love you", "i"));
+                </code>
+            </pre>
+        </div>
+        <div class="box">
+            <h3>Bai 2</h3>
+            <p class="prompt">Add an ellipsis after 8 characters</p>
+            <pre class="code-input-ctr language-javascript">
+                <code class="code-input">
+    function shortenString(str) {
+        if (str.length > 8) {
+            return `${str.substr(0,8)}...`
+        } else {
+            return str
+        }
+    }
+    
+    console.log(shortenString("xin chao cac ban"));
+    console.log(shortenString("hello"));
+                </code>
+            </pre>
+        </div>
+        <div class="box">
+            <h3>Bai 3</h3>
+            <p class="prompt">Capitalise each word</p>
+            <pre class="code-input-ctr language-javascript">
+                <code class="code-input">
+    function capitaliseWord(word) {
+        return word.slice(0,1).toUpperCase() + word.slice(1);  
+    }
+    
+    function capitaliseString(str) {
+        let newStr = (str.toLowerCase()).split(" ");
+        let word = [];
+        for (let i = 0; i < newStr.length; i ++) {
+            newStr[i] = capitaliseWord(newStr[i]);
+        }
+        return newStr.join(" ");
+    }
+    
+    console.log(capitaliseString('I doNt EveN KnOw heR liKe thAt'));
+    console.log(capitaliseString('chÀo MừnG đẾn với techMaster'));
+                </code>
+            </pre>
+        </div>
+        <div class="box">
+            <h3>Bai 4</h3>
+            <p class="prompt">Repeat a string with a dash in between</p>
+            <pre class="code-input-ctr language-javascript">
+                <code class="code-input">
+    function linkChar(letter,repeat) {
+        let newStr = [];
+        for (let i = 0; i < repeat; i++) {
+            newStr.push(letter)
+        }
+        return newStr.join("-");
+    };
+    
+    console.log(linkChar('XOX', 7));
+    console.log(linkChar('abc', 10));
+                </code>
+            </pre>
+        </div>
+        <div class="box">
+            <h3>Bai 5</h3>
+            <p class="prompt">Reverse a string</p>
+            <pre class="code-input-ctr language-javascript">
+                <code class="code-input">
+    function reverseStr(str) {
+        let newStr = (str.split("")).reverse();
+        return newStr.join("");  
+    };
+    
+    console.log(reverseStr('hello how are you friend'));
+                </code>
+            </pre>
+        </div>
+        <div class="box">
+            <h3>Bai 6</h3>
+            <p class="prompt">Check for palindrome words or phrases</p>
+            <pre class="code-input-ctr language-javascript">
+                <code class="code-input">
+    function checkPalindrome(str) {
+        let newStr = (str.toLowerCase("")).split("");
+        for (let i = 0; i < newStr.length; i++) {
+            if (newStr[i] == " ") {
+                newStr.splice(i,1);
+            }
+        }
+        if (newStr.join("") == (newStr.reverse()).join("")) {
+            return true
+        } else {
+            return false
+        }
+    };
+    
+    console.log(checkPalindrome('Race car'));
+    console.log(checkPalindrome('hello word'));
+    console.log(checkPalindrome("redivider"));
+                </code>
+            </pre>
+        </div>
+        <div class="box">
+            <h3>Bai 7</h3>
+            <p class="prompt">Count vowels in a string</p>
+            <pre class="code-input-ctr language-javascript">
+                <code class="code-input">
+    function countVowel(str) {
+        let newStr = (str.toLowerCase("")).split("");
+        let vowel = ["a","o","e","i","u"]
+        let total = 0;
+        for (let i = 0; i < newStr.length; i++) {
+            if (vowel.includes(newStr[i]) == true) {
+                total += 1;
+            }
+        }
+        return total;
+    }
+    console.log(countVowel('hello'));
+    console.log(countVowel('aahaa'));
+                </code>
+            </pre>
+        </div>
+        <div class="box">
+            <h3>Bai 8</h3>
+            <p class="prompt">Check ending</p>
+            <pre class="code-input-ctr language-javascript">
+                <code class="code-input">
+    function checkEnd(str, end) {
+        if (str.slice(-(end.length)) == end) {
+            return true
+        } else {
+            return false
+        }
+    }
+    console.log(checkEnd('hello', 'lo'));
+    console.log(checkEnd('hello', 'll'));
+                </code>
+            </pre>
+        </div>
+        <div class="box">
+            <h3>Bai 9</h3>
+            <p class="prompt">Find the initials</p>
+            <pre class="code-input-ctr language-javascript">
+                <code class="code-input">
+    function findInitials(str) {
+        let newStr = str.split(" ");
+        let initials = [];
+        for (let i = 0; i < newStr.length; i++) {
+            initials.push(newStr[i].charAt(0));
+        }
+        return initials.join(" ");
+    }
+    console.log(findInitials('Nguyen Anh Khoi'));
+    console.log(findInitials('xin chao cac ban'));
+                </code>
+            </pre>
+        </div>
+        <div class="box">
+            <h3>Bai 10</h3>
+            <p class="prompt">Sort characters alphabetically</p>
+            <pre class="code-input-ctr language-javascript">
+                <code class="code-input">
+    function sortLetters(str) {
+        let newStr = str.split("");
+        for (let i = 0; i < newStr.length; i++) {
+            if (newStr[i] == " ") {
+                newStr.splice(i,1);
+            }
+        }
+        return (newStr.sort()).join("");
+    }
+    console.log(sortLetters('hello world'));
+    console.log(sortLetters('xin chao cac ban'));
+                </code>
+            </pre>
+        </div>
+        <div class="box">
+            <h3>Bai 11</h3>
+            <p class="prompt">List non-repeated characters</p>
+            <pre class="code-input-ctr language-javascript">
+                <code class="code-input">
+    function getLetterNoRepeat(str) {
+        let newStr = str.split("");
+        let notRepeated = [];
+        for (let i = 0; i < newStr.length; i++) {
+            if (newStr[i] == " ") {
+                newStr.splice(i,1);
+            }
+        }
+        for (let i = 0; i < newStr.length; i++) {
+            if (newStr.indexOf(newStr[i]) == newStr.lastIndexOf(newStr[i])) {
+                notRepeated.push(newStr[i])
+            }
+        }
+        
+        return notRepeated.join();
+    }
+    console.log(getLetterNoRepeat('abc abce'));
+    console.log(getLetterNoRepeat('abce abcdf'));
+    console.log(getLetterNoRepeat('abdce abecdfzy'));
+    console.log(getLetterNoRepeat('abab'));
+                </code>
+            </pre>
+        </div>
+    </div>
+    <script src="./script.js"></script>
+    <script src="./prism.js"></script>
+</body>
+</html>
