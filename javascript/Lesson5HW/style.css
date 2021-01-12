@@ -1,0 +1,35 @@
+
+
+body {
+    background-color: #E0CBA8;
+    display: flex;
+    justify-content: center;
+}
+
+.ctr {
+    width: 1150px;
+}
+
+h3 {
+    background-color: #564154;
+    color: white;
+    width: 300px;
+    font-size: 25px;
+    padding: 10px;
+    font-family: sans-serif;
+    text-align: center;
+}
+
+.box {
+    padding: 10px;
+    background-color: #88498F;
+    margin-bottom: 20px;
+}
+
+.prompt {
+    color: white;
+    font-size: 18px;
+    padding: 10px;
+    background-color: #779FA1;
+    font-family: sans-serif;
+}
