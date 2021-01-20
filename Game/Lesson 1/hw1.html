@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: sans-serif;
+        }
+        #numCount-ctn {
+            display: flex;
+            justify-content: flex-end;
+            background-color: aqua;
+            padding: 10px;
+            font-weight: bold;
+            font-size: 30px;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+    </ul>
+
+    <ul id = "list">
+        <li> Item 1 </li>
+        <li> Item 2 </li>
+        <li> Item 3 </li>
+        <li> Item 4 </li>
+        <li> Item 5 </li>
+        <li> Item 6 </li>
+        <li> Item 7 </li>
+    </ul>
+    <h1>Heading</h1>
+    <p id="big-paragraph">
+        Hey, you're not permitted in there. It's restricted. You'll be deactivated for sure.. Don't call me a mindless
+        philosopher, you overweight glob of grease! Now come out before somebody sees you. Secret mission? What plans?
+        What are you talking about? I'm not getting in there! I'm going to regret this. There goes another one. Hold
+        your fire. There are no life forms. It must have been short-circuited. That's funny, the damage doesn't look as
+        bad from out here. Are you sure this things safe?
+
+        Close up formation. You'd better let her loose. Almost there! I can't hold them! It's away! It's a hit!
+        Negative. Negative! It didn't go in. It just impacted on the surface. Red Leader, we're right above you. Turn to
+        point... oh-five, we'll cover for you. Stay there... I just lost my starboard engine. Get set to make your
+        attack run.
+
+        The Death Star plans are not in the main computer. Where are those transmissions you intercepted? What have you
+        done with those plans? We intercepted no transmissions. Aaah....This is a consular ship. Were on a diplomatic
+        mission. If this is a consular ship...were is the Ambassador? Commander, tear this ship apart until you've found
+        those plans and bring me the Ambassador. I want her alive! There she is! Set for stun! She'll be all right.
+        Inform Lord Vader we have a prisoner.
+
+        What a piece of junk. She'll make point five beyond the speed of light. She may not look like much, but she's
+        got it where it counts, kid. I've added some special modifications myself. We're a little rushed, so if you'll
+        hurry aboard we'll get out of here. Hello, sir. Which way? All right, men. Load your weapons! Stop that ship!
+        Blast 'em! Chewie, get us out of here! Oh, my. I'd forgotten how much I hate space travel.
+
+        Run, Luke! Run!
+    </p>
+    <script>
+        // Bai 1
+        let p_1 = document.createElement('p');
+        p_1.id = 'text';
+        p_1.style.color = '#777';
+        p_1.style.fontSize = '2rem';
+        p_1.innerHTML = 'I can do <em> whatever </em> I want with JavaScript.'
+        document.body.prepend(p_1);
+
+        // Bai 2
+        let ul_1 = document.querySelector('body > ul')
+        for (let i = 0; i < ul_1.children.length; i++) {
+            ul_1.children[i].style.color = 'blue';
+        };
+
+        // Bai 3
+        // 1
+        let list = document.querySelector('#list')
+
+        for (let i = 0; i < 3; i++) {
+            let li_1 = document.createElement('li');
+            let num = 8
+            li_1.innerText = `Item ${num+i}`
+            list.appendChild(li_1);   
+        };
+        // 2
+        let li_1 = document.querySelector('#list > li:nth-child(1)')
+        li_1.style.color = 'red';
+        // 3
+        let li_2 = document.querySelector('#list > li:nth-child(3)')
+        li_2.style.backgroundColor = 'blue';
+        // 4
+        let li_3 = document.querySelector('#list > li:nth-child(4)')
+        list.removeChild(li_3)
+        // 5
+        let li_4 = document.createElement('li')
+        let li_5 = document.querySelector('#list > li:nth-child(4)')
+        li_4.innerText = 'New Item 4'
+        list.insertBefore(li_4,li_5)
+        // 6
+        let btn = document.createElement('button')
+        btn.innerText = 'Add'
+        let input  = document.createElement('input')
+        input.placeholder = 'Input';
+        document.body.appendChild(btn);   
+        document.body.appendChild(input);   
+        // Bai 4
+        // 1
+        let paragraph = document.querySelector('#big-paragraph')
+        content = paragraph.innerText
+            .split(' ')
+            .map(word => word.length >= 8 ? `<span style="background-color: yellow">${word}</span>` : word)
+            .join(" ");
+        paragraph.innerHTML = content;
+        // 2
+        let link = document.createElement('a');
+        link.innerText = 'facebook';
+        link.href = "https://facebook.com";
+        link.target = '_blank';
+        document.body.appendChild(link);
+        // 3
+        let wordCount = paragraph.textContent.split(' ').length
+        let wordCount_ctn = document.createElement('div'); 
+        wordCount_ctn.id = 'numCount-ctn'
+        wordCount_ctn.innerText = `${wordCount} words`;
+        document.body.appendChild(wordCount_ctn);
+        // 4.1
+        let replaceEmoji = array => array.map(ele => ele == '?' ? ele = '🤔' : ele == '!' ? ele = '😲' : ele);
+        paragraph.innerHTML = replaceEmoji(content.split("")).join("");
+        // 4.2
+        // paragraph.innerText = paragraph.innerText.replace(/\?/g, '🤔');
+        // paragraph.innerText = paragraph.innerText.replace(/\!/g, '😲');
+    </script>
+</body>
+</html>

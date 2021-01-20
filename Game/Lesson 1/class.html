@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: sans-serif;
+        }
+        .text-big {
+            font-size: 2rem;
+        }
+        .text-red {
+            color: red;
+        }
+        .text-bold {
+            font-weight: bold;
+        }
+        .text-upper {
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+<body>
+    <p class="para">This is paragraph</p>
+    
+    <script>
+
+        
+        // Changing class
+        // add()
+        // remove()
+        // contains()
+        // toggle()
+
+        let para = document.querySelector('.para');
+        console.log(para.classList.length);
+
+        // add()
+        // for adding classes to a tag, could be more than 1
+        para.classList.add('text-big', 'text-red', 'text-upper');
+
+        // remove()
+        // for removing classes of a tag, could be more than 1
+        para.classList.remove('text-red', 'text-upper');
+
+        // contains()
+        // check if the tag belongs to a class
+        // return true or false
+        console.log(para.classList.contains('text-big'));
+        console.log(para.classList.contains('text-red'));
+
+        // toggle(class, true|false)
+        // if tag has class, then removes it
+        // if doesn't, it addes the class to the element
+
+        // setInterval
+
+        // let time = 10;
+        // let interval = setInterval(changeColor, 500);
+
+        // function changeColor() {
+        //     console.log(time);
+        //     if (time%2==0) {
+        //         para.style.color = 'red';
+        //     } else {
+        //         para.style.color = 'blue';
+        //     }
+        //     if(time==0) {
+        //         clearInterval(interval);
+        //         console.log("End")
+        //     }
+        //     time--
+        // };
+
+        function toggleClass() {
+            para.classList.toggle('text-big')
+        }
+        // calls a function only once
+        setTimeout(toggleClass,);
+        setTimeout(toggleClass,3000);
+
+    </script>
+</body>
+</html>

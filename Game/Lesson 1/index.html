@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 1</title>
+    <link rel="stylesheet" href="./prism.css"> 
+    <link rel="stylesheet" href="style.css">
+    <style>
+        p:nth-child(4) {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <!-- <div class="ctr">
+        <div class="box">
+            <h3>Bai 1</h3>
+            <p class="prompt">Find if a word is inside a string</p>
+            <pre class="code-input-ctr language-javascript">
+                <code class="code-input">
+    Game
+                </code>
+            </pre>
+        </div> -->
+        
+    <h1 id="heading">This is the heading</h1>
+    <p>This is paragraph 1</p>
+    <p class="para">This is paragraph2</p>
+    <p class="para">This is paragraph 3</p>
+    <div class="box">
+        <ul>
+            <li style="display: none;">Card 1</li>
+            <li class="li">Card 2</li>
+            <li>Card 3</li>
+            <li>Card 4</li>
+            <!-- <li>Card 5</li> -->
+        </ul>
+    </div>
+
+    <script>
+        
+        // Using id
+        let heading = document.getElementById('heading');
+        console.log(heading)
+
+        // Using tags
+        let p = document.getElementsByTagName('p');
+        console.log(p);
+        console.log(p.length);
+        console.log(p[0]);
+        console.log(p[1]);
+
+        let h1 = document.getElementsByTagName('h1');
+        console.log(h1[0]);
+
+        // Using class
+        let p_classname = document.getElementsByClassName('para');
+        console.log(p_classname);
+        console.log(p_classname.length);
+        console.log(p_classname[0]);
+
+        // Using css Selector
+        // Only returns the first element
+        let h1_css = document.querySelector('#heading');
+        console.log(h1_css);
+
+        let para_css = document.querySelector('.para');
+        console.log(para_css);
+        
+        let para3 = document.querySelector('p:nth-child(4)');
+        console.log(para3);
+
+        let p_all = document.querySelectorAll('p');
+        console.log(p_all);
+
+
+        // Node.parentNode;
+        // Node.childNodes;
+        // Node.lastChildNode;
+        // Node.firstChildNode;
+        // Node.previousSibling;
+        // Node.nextSibling;
+
+        let box = document.querySelector('.box');
+        console.log(box.parentNode);
+        console.log(box.nextElementSibling);
+        console.log(box.previousElementSibling);
+        console.log(box.childNodes);
+        console.log(box.children);
+
+        let ul = document.querySelector('ul');
+        console.log(ul.childNodes);
+        console.log(ul.children);
+        console.log(ul.firstChild);
+
+        // get/set content
+        // The innerHTML property returns the text, including all spacing and inner element tags.
+        // The innerText property returns just the text, without spacing and inner element tags.
+        // The textContent property returns the text with spacing, but without inner element tags.
+
+        console.log(heading.innerHTML);
+        console.log(heading.innerText);
+        console.log(heading.textContent);
+
+        console.log(ul.innerHTML);
+        console.log(ul.innerText);
+        console.log(ul.textContent);
+
+        heading.innerHTML = "Xin <br> Chao";
+        heading.innerText = "Hello";
+        heading.textContent = "Goodbye";
+
+        // Changing style of an element
+        heading.style.color = "blue";
+        heading.style.backgroundColor = "#000";
+        heading.style.fontSize = "40px";
+        
+        // Create element
+
+        let para4 = document.createElement('p');
+        para4.innerText = "New list";
+        para4.id = "para4";
+        para4.className = "para4";
+        console.log(para4);
+
+        // Apply new element
+        // parentNode.appendChild(newNode)  -->     At the bottom
+        // parentNode.prepend(newNode)  -->  At the start
+        // parentNode.inserBefore(newNode, referNode)   -->  Before a node
+
+        document.body.prepend(para4);
+        document.body.appendChild(para4);
+
+        document.body.style.fontFamily = "sans-serif";
+
+        // Example
+        let li_5 = document.createElement('li');
+        li_5.innerText = "This is new Card 6";
+        li_5.style.backgroundColor = "orange";
+        li_5.style.padding = "10px";
+        li_5.style.width = "140px";
+        ul.prepend(li_5);
+
+        let li_6 = document.createElement('li');
+        li_6.innerText = "This is new Card 7";
+        li_6.style.backgroundColor = "blue";
+        li_6.style.color = "white";
+        li_6.style.padding = "10px";
+        li_6.style.width = "140px";
+        let card_last = document.querySelector('li:nth-last-child(1)')
+        ul.insertBefore(li_6,card_last);
+
+        let newPara = document.createElement('p');
+        newPara.innerText = 'New para';
+
+        let para_2 = document.querySelector('.para')
+        document.body.insertBefore(newPara,para_2)
+
+
+        // targetElement.insertAdjacentHTML(position,text);
+        // targetElement.insertAdjacentElement(position,element);
+        // targetElement.insertAdjacentText(position,text);
+        // position: "afterbegin","afterend","beforebegin","beforeend"
+
+
+        // Remove elements
+        let para_1 = document.querySelector('p');
+        document.body.removeChild(para_1);
+
+        let li_del = document.querySelector('li:nth-child(4)');
+        ul.removeChild(li_del);
+
+        // Replace element 
+        // 
+
+        let link = document.createElement('a');
+        link.innerText = 'google';
+        link.href = "https://google.com";
+        link.target = '_blank';
+        
+
+        document.body.replaceChild(link, para_2);
+
+        let input = document.createElement('input');
+        input.placeholder = 'Email';
+
+        document.body.replaceChild(input, para3);
+
+        // Copy element
+        // clondeNode();
+        let ulCopy = ul.cloneNode(true);
+        document.body.appendChild(ulCopy);
+
+        let test = document.querySelector('.box').querySelector('.li');
+        console.log(test.innerText);
+
+
+
+    </script>
+    <script src="./prism.js"></script>
+    <script src="./script.js"></script>
+</body>
+</html>
