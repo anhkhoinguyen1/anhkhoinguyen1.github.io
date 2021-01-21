@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <style>
+        .hiden {
+            visibility: hidden;
+        }
+        #texture-background {
+            background-image: url('https://image.freepik.com/free-vector/memphis-seamless-patterns_9202-768.jpg');
+        }
+    </style>
+</head>
+<body>
+    <p id="secret">HELLO THIS IS A SECRET</p>
+    <button id="hide">Hide/Show</button>
+
+    <div>
+        <label for="texture-selector">Choose a texture:</label>
+        <select id="texture-selector">
+          <option value="https://image.freepik.com/free-vector/memphis-seamless-patterns_9202-768.jpg">Memphis Seamless</value>
+          <option value="https://image.freepik.com/free-vector/retro-styled-pattern-background_1048-6593.jpg">Retro-styled</value>
+          <option value="https://image.freepik.com/free-vector/abstract-background-with-3d-pattern_1319-68.jpg">3D Cubes</value>
+        </select>
+    </div>
+  
+    <div id="texture-background" style="width: 100px; height: 100px; margin-bottom: 5px;"></div>
+
+    <button id="list-vis"></button>
+    <input type="text" placeholder="Enter list" id="list-input">
+    <button id="list-enter">Add</button>
+    <button id="list-remove">Remove</button>
+    <ul id="list-list">
+
+    </ul>
+    <script>
+        // Task
+        // 3. Tạo 1 thẻ p có nội dung bất kỳ và 1 thẻ button sau đó ấn vào button thì toggle ẩn/hiện thẻ p
+        let hide_btn = document.querySelector('#hide') 
+        let secret = document.querySelector('#secret')
+        hide_btn.addEventListener('click', function() {
+            secret.classList.toggle('hiden');
+        })
+        // 4. Lắng nghe sự kiện "change" của ô input. Thay đổi background-image của div = giá trị trong ô input
+        let select_texture = document.querySelector('#texture-selector')
+        let select_background = document.querySelector('#texture-background')
+        
+        select_texture.addEventListener('change', function(e) {
+            let background = e.target.value;
+            select_background.style.backgroundImage = `url('${background}')`;
+        })
+        // 6. Thêm 1 nút "add" + 1 ô input để nhập text. Mỗi khi bấm nút thêm 1 thẻ <li> có nội dung là nội dung trong ô input vào cuối danh sách
+        let list_input = document.querySelector('#list-input')
+        let list_list = document.querySelector('#list-list');
+        let list_enter = document.querySelector('#list-enter')
+        list_enter.addEventListener('click', function() {
+            let value = list_input.value
+            if (value == '') {
+                return
+            }
+            list_list.insertAdjacentHTML('afterbegin', `<li class="added-list">${value}</li>`);
+            list_input.value = '';
+        });
+        //  7. Thêm 1 nút "remove". Chức năng để xóa thẻ <li> cuối cùng của danh sách
+        let list_remove = document.querySelector('#list-remove');
+        list_remove.addEventListener('click', function() {
+            let list_last = document.querySelector('#list-list > li:last-child')
+            list_input.value = '';
+            if (list_last == null) {
+                return
+            }
+            list_last.remove();
+        })
+        //  8. Thêm 1 nút "Hide" trên đầu của danh sách <ul>. 
+        let list_vis = document.querySelector('#list-vis')
+        list_vis.innerText = 'Hide'
+        list_vis.addEventListener('click', function() {
+            list_list.classList.toggle('hiden');
+            switch (list_list.className) {
+                case 'hiden':
+                    list_vis.innerText = 'Show'
+                    break;
+                case '': 
+                    list_vis.innerText = 'Hide'
+                    break;
+            };
+        });
+    </script>
+</body>
+</html>
