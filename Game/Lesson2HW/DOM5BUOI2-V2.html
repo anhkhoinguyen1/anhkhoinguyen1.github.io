@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            font-family: sans-serif;
+        }
+        #main-container {
+            height: 250px;
+            width: 600px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+        }
+        #title-ctn {
+            width: 100%;
+            height: 70px;
+            background-color: #0B84E3;
+            color: azure;
+            font-size: 20px;
+            text-align: center;
+            word-spacing: 7px;
+        }
+        #question-ctn {
+            width: 100%;
+            height: 200px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-direction: row;
+        }
+        .box {
+            background-color: wheat;
+            height: 100px;
+            width: 100px;
+            border: 3px solid #0B84E3;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 25px;
+        }
+        .sign {
+            color: black;
+            font-size: 50px;
+        }
+        #input {
+            height: 95%;
+            width: 100%;
+            outline: none;
+            border: none;
+            font-weight: bold;
+            font-size: 45px;
+            background-color: wheat;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+        }
+        button {
+            height: 40px;
+            width: 100px;
+            outline: none;
+            border: none;
+            background-color: #0B84E3;
+            color: white;
+            font-size: 15px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #FB84E3;
+        }
+        #data-ctn  {
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+        }
+        .data {
+            background-color: aquamarine;
+            height: 30px;
+            width: 140px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 10px;
+            margin-bottom: -10px;
+        }
+        .data-title {
+            font-size: 15px;
+            margin-right: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div id="main-container">
+        <div id="title-ctn">
+            <h3>Test Your Math Skills!</h3>
+        </div>
+        <div id="data-ctn">
+            <div class="data">
+                <h3 class="data-title">Score: <h3 id="score">0</h3></h3>
+            </div>
+            <div class="data">
+                <h3 class="data-title">Time: <h3 id="time">20</h3></h3>
+            </div>
+            <div class="data">
+                <h3 class="data-title">Highscore: <h3 id="highscore">NaN</h3></h3>
+            </div>
+        </div>
+        <div id="question-ctn">
+            <div class="box">
+                <h1 id="box-1"></h1>
+            </div>
+            <h1 class="sign" id="op"></h1>
+            <div class="box">
+                <h1 id="box-2"></h1>
+            </div>
+            <h1 class="sign">=</h1>
+            <div class="box">
+                <input type="number" id="input">
+            </div>
+            <button id="check">Check</button>
+        </div>
+    </div>
+
+    <script>
+        let box1 = document.getElementById('box-1');
+        let box2 = document.getElementById('box-2');
+        let op = document.getElementById('op');
+        let operation = ['+','−','×','÷']
+        let score = 0;
+        let time = 20;
+        let highscore = 0;
+        function numberGen(min,max) {
+            return Math.round(Math.random() * (max-min) + min)
+        };
+        function roundOrNot(num) {
+            if (Number.isInteger(num)) {
+                return num
+            }   else  {
+                return num.toFixed(2);
+            }
+        };
+        function questionGenerator() {
+            let num1 = numberGen(1,20)
+            let num2 = numberGen(1,20)
+            let oper = operation[numberGen(0,3)]
+            box1.innerText = num1
+            box2.innerText = num2
+            op.innerText = oper
+            
+            switch (operation.indexOf(oper)) {
+                case 0:
+                    return num1 + num2;
+                case 1:
+                    return num1 - num2;
+                case 2:
+                    return num1 * num2;
+                case 3:
+                    return num1 / num2;
+            };
+        };
+        let answer = questionGenerator();
+        let check_btn = document.getElementById('check');
+        let input = document.getElementById('input');
+        check_btn.addEventListener('click', function() {
+            let value = input.value
+            if (value == '') {
+                alert('Please fill in!!');
+                return
+            }   else if (value == `${answer}`) {
+                alert('Well Done');
+                answer = questionGenerator();
+                input.value = ''
+                input.focus();
+                score++
+                updateScore(score)
+                return
+            }   else {
+                alert('Try again')
+            };
+        });
+        let scoreDisplay = document.getElementById('score')
+        let timeDisplay = document.getElementById('time')
+        let highscoreDispaly = document.getElementById('highscore')
+
+
+        function updateScore(score) {
+            scoreDisplay.innerText = `${score}`
+        }
+        let countDown = setInterval(updateTime,1000);
+
+        function updateTime() {
+            time--
+            if (time < 0) {
+                clearInterval(countDown);
+                alert(`Congrats! Your score is ${score}`)
+                highscore = updateHighscore(score);
+                answer = questionGenerator();
+                resetGame()
+            }
+            timeDisplay.innerText = `${time}`
+        };
+        function resetGame() {
+            score = 0;
+            time = 20;
+            input.value = ''
+            input.focus();
+            scoreDisplay.innerText = `0`
+            timeDisplay.innerText = `20`
+            countDown = setInterval(updateTime,1000);
+        };
+        function updateHighscore(score) {
+            if (highscore == 0 || highscore < score)   {
+                highscoreDispaly.innerText = `${score}`
+            }   
+            return score
+        }
+    </script>
+</body>
+</html>
