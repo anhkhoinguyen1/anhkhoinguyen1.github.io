@@ -1,0 +1,320 @@
+<!DOCTYPE html> 
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale = 1.0, maximum-scale=1.0, user-scalable=no" /> 
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    </head>
+    <style> 
+
+        @media only screen and (min-width: 768px) {
+            .imgduo {
+                width: 50%;
+                height: 500px;
+                padding: 0%;
+                position: relative;
+                float: left;
+            }
+
+            .newsbox {
+                border-color: gray;
+                border-width: 2px;
+                border-style: solid;
+                float: left;
+                margin: 20px;
+                padding: 0px;
+
+            }
+
+            #header {
+                background-color: rgb(46, 115, 243);
+                height: 80px;
+                color: whitesmoke;
+                width: 100%;
+
+            }
+
+        }
+
+        @media only screen and (max-width: 768px) {
+            .imgduo {
+                width: 100%;
+                padding: 0%;
+                height: 500px;
+            }
+
+            .formbits {
+                width: 50%;
+            }
+
+            .in {
+                margin-left: 50px;
+            }
+
+            .newsbox {
+                border-color: gray;
+                border-width: 2px;
+                border-style: solid;
+                float: left;
+                margin: 30px;
+                padding: 0px;
+
+            }
+
+            #header {
+                background-color: rgb(46, 115, 243);
+                height: 80px;
+                color: whitesmoke;
+                width: 100%;
+
+            }
+            
+
+        }
+
+        @media only screen and (max-width: 600px) {
+            .imgduo {
+                width: 100%;
+                padding: 0%;
+                height: 500px;
+            }
+
+            #img1 {
+                height: auto;
+            }
+
+            #header {
+                background-color: rgb(255, 255, 255);
+                height: 80px;
+                color: rgb(46, 115, 243);
+                width: 100%;
+                font-size: 20px;
+            }
+
+        }
+
+        #img2 {
+            background-image: url('https://i.imgur.com/YE6srBq.jpg');
+            background-size:100% 100%; 
+            color: whitesmoke;
+        }
+
+        .boldunder {
+            font-weight: bold;
+            text-decoration: underline;
+            
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        .circleimage {
+            border-radius: 100%;
+            width: 75px;
+            height: auto;
+        }
+
+
+        .footer {
+            color: whitesmoke;
+            padding: 5px;
+            text-align: left;
+            vertical-align: top;
+
+        }
+
+        .newspost {
+            object-fit: cover;
+            width: 100%; 
+            height: 100px; 
+            padding-left: 5%;
+            padding-top: 2%;
+
+        }
+
+
+    </style>
+
+    <body>
+
+        <div class="container-liquid" >
+
+            <div class="row">
+
+                <div id="header">
+                    <div class="col-lg-3 col-sm-1 col-xs-4"></div>
+
+                    <div class="col-lg-1 col-sm-2 col-xs-6">
+                        <p href="#" style="font-weight: bold; position: absolute; top: 30px;"> CREVEA INC </p>
+                    </div>
+                    <div class="col-lg-3 col-sm-2"></div>
+
+                    <div class="col-lg-3 col-sm-6 visible-lg visible-sm visible-md">
+                        <div style="position: absolute; top: 30px;">
+                            <a href="home.html" style="color: whitesmoke">Home</a>
+                            <a href="ourbusiness.html" style="color: whitesmoke;">Our buisness</a>
+                            <a href="aboutus.html" style="color: whitesmoke;">ABOUT US</a>
+                            <a href="news.html" style="color: whitesmoke;">NEWS</a>
+                            <a href="contact.html" style="color: rgb(233, 155, 38);">CONTACT</a>    
+                        </div>                         
+                    </div>
+                </div>
+
+            </div>  
+            
+            <img src="https://i.imgur.com/z7MBEsN.jpg" alt="We are Crevea INC" width="100%">
+
+
+            <div class="row">
+
+                <div class="col-lg-2"></div>
+
+                <div class="col-lg-4" style="padding: 40px;">
+                    <h2 style="color: rgb(37, 37, 37);" class="text-center">Contact Info</h2>
+                    <div>
+                        <p>We will connect you with the relevant person in charge.</p>
+                        <p>Please click "Send Button" after providing your registering input.</p>
+                    </div>
+                    <div>
+                        <p><b>Add:</b></p>
+                        <p>No 45C, 210 alley, Hoan Quoc Viet street Cau Giay - Hanoi - Vietnam</p>
+                        <p><b>TEL:</b></P>
+                        <p>(+84)-989-412-665</p>
+                        <p><b>Email:</b></p>
+                        <p>daisuke.kawashima@crevea.vn</p>
+                    </div>
+                </div>
+
+                <div class="row col-lg-4">
+
+                    <h2 style="color: rgb(37, 37, 37);" class="text-center">Contact Us</h2>
+
+                    <div style="padding: 40px;">
+                        
+                        <div class="row">
+                            <label class="col-sm-3" for="companyname">Company Name</label>
+                            <div class="col-sm-9">
+                                <input  type="text" class="form-control" placeholder="Company Name" id="companyname">
+                            </div>
+                        </div>
+                    
+                        <br>
+
+                        <div class="row">
+                            <label class="col-sm-3" for="yourname">Your Name</label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control" placeholder="Your Name" id="yourname">
+                            </div>
+                        </div>
+
+                        <br>
+
+                        <div class="row">
+                            <label class="col-sm-3" for="email">Email address</label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control" placeholder="email@example.com" id="email">
+                            </div>
+                        </div>
+
+                        <br>
+
+                        <div class="row">
+                            <label class="col-sm-3" for="phone">Phone Number</label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control" placeholder="Phone Number" id="phone">
+                            </div>
+                        </div>
+
+                        <br>
+
+                        <div class="row">
+                            <label  class="col-sm-3" for="message">Your message</label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control" placeholder="Your Message" style="height: 50px;" id="message">
+                            </div>
+                        </div>
+
+                        <br> 
+
+                        <button type="button" style="float: right;" class="btn btn-warning">Send Message</button>
+                    </div>
+                    
+                </div>
+                
+            </div>
+
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1107.047832450011!2d105.78788242825568!3d21.046677313697618!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ab318bac93a5%3A0x1675aa326d11c21f!2zMjEwIEhvw6BuZyBRdeG7kWMgVmnhu4d0LCBD4buVIE5odeG6vywgQ-G6p3UgR2nhuqV5LCBIw6AgTuG7mWksIFZpZXRuYW0!5e0!3m2!1sen!2sus!4v1612685969032!5m2!1sen!2sus" width="100%" height="300" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+
+            <div style="padding: 10px; background-color: rgb(37, 37, 37); text-align: center; margin-top: 0cm;">
+
+                <div class="row">
+
+                    <div class="col-lg-3"></div>
+
+                    <div class="col-lg-3 footer">
+
+                        <h4 style="font-weight: bold;">CREAVA</h3>
+
+                        <p>Add: No 45C, 210 alley, Hoan Quoc Viet street Cau Giay - Hanoi - Vietnam</p>
+
+                        <p>TEL: (+84)-989-412-665</p>
+
+                        <p>Email: daisuke.kawashima@crevea.vn</p>
+
+                        <p>Follow us on:</p>
+
+                    </div>
+
+                    <div class="col-lg-1 footer">
+
+                        <h4 style="font-weight: bold;">CATEGORIES</h3>
+
+                        <ul>
+                            <li src='#' style="text-decoration: underline">Home</li>
+                            <li src='#' style="text-decoration: underline">OUR BUISNESS</li>
+                            <li src='#' style="text-decoration: underline">ABOUT US</li>
+                            <li src='#' style="text-decoration: underline">NEWS</li>
+                            <li src='#' style="text-decoration: underline">CONTACT</li>
+
+                        </ul>
+
+                    </div>
+
+                    <div class="col-lg-1 footer">
+
+                        <h4 style="font-weight: bold;">LANGUAGE</h3>
+
+                        <ul>
+                            <li src='#' style="text-decoration: underline">English</li>
+                            <li src='#' style="text-decoration: underline">Japanese</li>
+                        </ul>
+
+                    </div>
+
+                    <div class="col-lg-3 footer">
+
+                        <h4 style="font-weight: bold;">GET OUR NEWS FROM US</h3>
+
+                        <p>Please enter the email below to not miss the latest nes from us!</p>
+
+                        <input type="text" placeholder="Your email address">
+
+                    </div>
+
+                </div>
+
+                <hr>
+
+                <p style="color: whitesmoke;">© 2018 CREVEA Inc. All rights reserved</p>
+
+            </div>
+
+            
+        </div>
+    </body>
+
+
+</html>
